@@ -1,4 +1,4 @@
-<img src="https://github.com/vinceliuice/Sierra-gtk-theme/blob/imgs/logo.png" alt="Logo" align="right" /> WhiteSur Icon Theme
+<img src="https://github.com/vinceliuice/Sierra-gtk-theme/blob/imgs/logo.png" alt="Logo" align="right" /> MacTahoe Icon Theme
 ======
 
 MacOS Tahoe like icon theme for linux desktops
@@ -18,7 +18,7 @@ Usage:  `./install.sh`  **[OPTIONS...]**
 |  OPTIONS:           | |
 |:--------------------|:-------------|
 |-d, --dest           | Specify theme destination directory (Default: $HOME/.local/share/icons)|
-|-n, --name           | Specify theme name (Default: WhiteSur)|
+|-n, --name           | Specify theme name (Default: MacTahoe)|
 |-t, --theme          | Specify theme color variant(s) [default/purple/pink/red/orange/yellow/green/grey/all] (Default: blue)|
 |-b, --bold           | Install bold panel icons version|
 |-r,--remove,-u,--uninstall | Uninstall (remove) icon themes|
