@@ -1,4 +1,4 @@
-<img src="https://github.com/vinceliuice/Sierra-gtk-theme/blob/imgs/logo.png" alt="Logo" align="right" /> MacTahoe Icon Theme
+<img src="logo.png" alt="Logo" align="right" /> MacTahoe Icon Theme
 ======
 
 MacOS Tahoe like icon theme for linux desktops
