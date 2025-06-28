@@ -1,6 +1,6 @@
 [Icon Theme]
-Name=WhiteSur
-Comment=MacOSX style icon theme for linux.
+Name=MacTahoe
+Comment=MacOSX Tahoe style icon theme for linux.
 Inherits=hicolor,breeze
 Example=folder
 
