@@ -33,10 +33,10 @@ Usage:  `./install.sh`  **[OPTIONS...]**
 
 ![bold](bold-size.png?raw=true)
 
-> Bold version suggested use in `High resolution display` like 4k display with 200% scale!
+> The bold version is recommended for use with a `High resolution display` like a 4k display with a 200% scale factor!
 
-## Requirement
-You can use this with:
+## Recommendations
+This icon theme works well with:
 
 ### GTK theme
 
