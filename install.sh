@@ -16,7 +16,7 @@ SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 THEME_NAME=MacTahoe
 COLOR_VARIANTS=('' '-light' '-dark')
-THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey' '-nord')
+THEME_VARIANTS=('' '-blue' '-purple' '-green' '-red' '-orange' '-yellow' '-grey' '-nord')
 
 themes=()
 colors=()
@@ -28,7 +28,7 @@ cat << EOF
   OPTIONS:
     -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
     -n, --name NAME         Specify theme name (Default: $THEME_NAME)
-    -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|nord|all] (Default: blue)
+    -t, --theme VARIANT     Specify theme color variant(s) [default|blue|purple|red|orange|yellow|green|grey|nord|all] (Default: blue)
     -b, --bold              Install bolder panel icons version (1.5px size)
 
     -r, --remove,
@@ -233,27 +233,27 @@ while [[ "$#" -gt 0 ]]; do
             themes+=("${THEME_VARIANTS[0]}")
             shift
             ;;
-          purple)
+          blue)
             themes+=("${THEME_VARIANTS[1]}")
             shift
             ;;
-          pink)
+          purple)
             themes+=("${THEME_VARIANTS[2]}")
             shift
             ;;
-          red)
+          green)
             themes+=("${THEME_VARIANTS[3]}")
             shift
             ;;
-          orange)
+          red)
             themes+=("${THEME_VARIANTS[4]}")
             shift
             ;;
-          yellow)
+          orange)
             themes+=("${THEME_VARIANTS[5]}")
             shift
             ;;
-          green)
+          yellow)
             themes+=("${THEME_VARIANTS[6]}")
             shift
             ;;

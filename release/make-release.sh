@@ -4,7 +4,7 @@ THEME_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=MacTahoe
 
-_THEME_VARIANTS=('' '-red' '-pink' '-purple' '-green' '-yellow' '-orange' '-grey' '-nord')
+_THEME_VARIANTS=('' '-blue' '-purple' '-green' '-red' '-yellow' '-orange' '-grey' '-nord')
 
 if [ ! -z "${THEME_VARIANTS:-}" ]; then
   IFS=', ' read -r -a _THEME_VARIANTS <<< "${THEME_VARIANTS:-}"
