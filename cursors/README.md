@@ -1,8 +1,5 @@
 # Qogir cursors
-This is an x-cursor theme inspired by Qogir theme and
-based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors).
-
-Windows version [Qogir-cursors](https://github.com/EnisHalimi/Qogir-cursor-windows)
+This is an macOS Tahoe cursors theme for linux desktops
 
 ## Installation
 To install the cursor theme simply copy the compiled theme to your icons
@@ -33,5 +30,4 @@ This will generate the pixmaps and appropriate aliases.
 The freshly compiled cursor theme will be located in `dist/`
 
 ## Preview
-![Qogir](preview.png)
-![Qogir-white](preview-white.png)
+![preview](preview.png)
