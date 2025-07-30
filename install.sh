@@ -81,7 +81,6 @@ install() {
     rm -rf "${THEME_DIR}"/places/scalable/user-trash{'','-full'}-dark.svg
 
     cp -r "${SRC_DIR}"/links/{actions,apps,categories,devices,emotes,emblems,mimes,places,status,preferences} "${THEME_DIR}"
-    ln -s "${THEME_DIR}"/preferences/32 "${THEME_DIR}"/preferences/22
   fi
 
   if [[ ${color} == '-light' ]]; then
@@ -205,6 +204,32 @@ uninstall() {
   echo "Uninstalling '"${THEME_DIR}"'..."
 }
 
+CURSORS_SRC_DIR="$SRC_DIR/cursors/src"
+INDEX="$CURSORS_SRC_DIR/cursorSVG"
+
+install_cursors_scalable() {
+  local dest=${1}
+  local name=${2}
+  local color=${3}
+  local svgid=${4}
+
+  local THEME_DIR="${dest}/${name}${color}"
+
+  if [[ "${color}" == '-light' ]]; then
+    cursors_color=''
+  else
+    cursors_color="${color}"
+  fi
+
+  cp -r "${SRC_DIR}/cursors/dist${cursors_color}/cursors" "${THEME_DIR}"
+  cp -r "${CURSORS_SRC_DIR}/cursor.theme" "${THEME_DIR}"
+  sed -i "s/${name}/${name}${color}/g" "${THEME_DIR}/cursor.theme"
+  cp -rf "$CURSORS_SRC_DIR"/scalable "${THEME_DIR}"/cursors_scalable
+  cp -rf "$CURSORS_SRC_DIR/svg${cursors_color}/${svgid}.svg" "${THEME_DIR}/cursors_scalable/${svgid}"
+  cp -rf "$CURSORS_SRC_DIR/svg${cursors_color}/progress"*".svg" "${THEME_DIR}/cursors_scalable/progress"
+  cp -rf "$CURSORS_SRC_DIR/svg${cursors_color}/wait"*".svg" "${THEME_DIR}/cursors_scalable/wait"
+}
+
 while [[ "$#" -gt 0 ]]; do
   case "${1:-}" in
     -d|--dest)
@@ -317,10 +342,18 @@ uninstall_theme() {
   done
 }
 
+install_cursor_theme() {
+  for color in "${COLOR_VARIANTS[@]}"; do
+    for svgid in `cat $INDEX`; do
+      install_cursors_scalable "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${svgid}"
+    done
+  done
+}
+
 if [[ "${remove}" == 'true' ]]; then
   uninstall_theme
 else
-  install_theme
+  install_theme && install_cursor_theme
 fi
 
 #exit 0
