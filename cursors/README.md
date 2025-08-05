@@ -1,6 +1,14 @@
-# Qogir cursors
+<img src="logo-readme.png" alt="Logo" align="right" /> Qogir cursors
+===
 
-This is a macOS Tahoe cursor theme for linux desktops.
+MacOS Tahoe like cursor theme for linux desktops.
+
+### Donate
+
+If you like my project, you can buy me a coffee:
+
+<span class="paypal"><a href="https://www.paypal.me/vinceliuice" title="Donate to this project using Paypal"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal donate button" /></a></span>
+
 
 ## Installation
 
