@@ -73,3 +73,12 @@ The freshly compiled cursor theme will be located in `dist/`
 ## Preview
 
 ![preview](preview.png)
+
+## Recommendations
+This cursor theme works well with:
+
+### GTK themes
+MacTahoe-gtk-theme: https://github.com/vinceliuice/MacTahoe-gtk-theme
+
+### Icon themes
+MacTahoe-icon-theme: https://github.com/vinceliuice/MacTahoe-icon-theme
