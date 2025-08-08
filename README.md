@@ -1,5 +1,5 @@
 <img src="logo.png" alt="Logo" align="right" /> MacTahoe Icon Theme
-======
+===
 
 MacOS Tahoe like icon theme for linux desktops
 
@@ -12,7 +12,6 @@ If you like my project, you can buy me a coffee:
 ![1](preview.png)
 ![2](screenshot1.jpg)
 ![3](screenshot2.jpg)
-
 
 ## Install tips
 
@@ -38,7 +37,8 @@ Usage:  `./install.sh`  **[OPTIONS...]**
 ## Recommendations
 This icon theme works well with:
 
-### GTK theme
-
+### GTK themes
 MacTahoe-gtk-theme: https://github.com/vinceliuice/MacTahoe-gtk-theme
 
+### Cursor themes
+MacTahoe-cursor-theme: https://github.com/vinceliuice/MacTahoe-icon-theme/tree/main/cursors
