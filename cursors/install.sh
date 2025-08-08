@@ -29,8 +29,8 @@ install_cursors() {
   [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR"
   mkdir -p "$THEME_DIR"
   cp -r "${OPEN_DIR}/dist${color}"/* "${THEME_DIR}"
-  cp -r "${SRC_DIR}/cursor.theme" "${THEME_DIR}"
-  sed -i "s/${name}/${name}${color}/g" "${THEME_DIR}/cursor.theme"
+#  cp -r "${SRC_DIR}/cursor.theme" "${THEME_DIR}"
+#  sed -i "s/${name}/${name}${color}/g" "${THEME_DIR}/cursor.theme"
   cp -rf "$SRC_DIR"/scalable "${THEME_DIR}"/cursors_scalable
   cp -rf "$SRC_DIR/svg${color}/${svgid}.svg" "${THEME_DIR}/cursors_scalable/${svgid}"
   cp -rf "$SRC_DIR/svg${color}/progress"*".svg" "${THEME_DIR}/cursors_scalable/progress"
