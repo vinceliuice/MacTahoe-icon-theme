@@ -79,3 +79,4 @@ cross_reverse crosshair
 diamond_cross crosshair
 fd_double_arrow nesw-resize
 tcross crosshair
+X_cursor x-cursor

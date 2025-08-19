@@ -222,8 +222,8 @@ install_cursors_scalable() {
   fi
 
   cp -r "${SRC_DIR}/cursors/dist${cursors_color}/cursors" "${THEME_DIR}"
-  cp -r "${CURSORS_SRC_DIR}/cursor.theme" "${THEME_DIR}"
-  sed -i "s/${name}/${name}${color}/g" "${THEME_DIR}/cursor.theme"
+#  cp -r "${CURSORS_SRC_DIR}/cursor.theme" "${THEME_DIR}"
+#  sed -i "s/${name}/${name}${color}/g" "${THEME_DIR}/cursor.theme"
   cp -rf "$CURSORS_SRC_DIR"/scalable "${THEME_DIR}"/cursors_scalable
   cp -rf "$CURSORS_SRC_DIR/svg${cursors_color}/${svgid}.svg" "${THEME_DIR}/cursors_scalable/${svgid}"
   cp -rf "$CURSORS_SRC_DIR/svg${cursors_color}/progress"*".svg" "${THEME_DIR}/cursors_scalable/progress"
