@@ -67,6 +67,12 @@ run:
 ./build.sh
 ```
 
+By default, cursors are built without any shadows. You can enable them with:
+
+```bash
+./build.sh --with-shadow
+```
+
 This will generate the pixmaps and appropriate aliases.
 The freshly compiled cursor theme will be located in `dist/`
 

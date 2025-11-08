@@ -1,5 +1,22 @@
 #! /usr/bin/env bash
 
+# Parse command line arguments
+WITH_SHADOWS=false
+for arg in "$@"; do
+  case $arg in
+    --with-shadows)
+      WITH_SHADOWS=true
+      echo "Building with shadows!"
+      shift
+      ;;
+    --help)
+      echo "Usage: $0 [--with-shadows]"
+      echo "  --with-shadows  Build cursors with subtle drop shadows (reverts SVGs after build)"
+      exit 0
+      ;;
+  esac
+done
+
 # check command avalibility
 has_command() {
   "$1" -v $1 > /dev/null 2>&1
@@ -97,11 +114,20 @@ function create {
 
 SRC="$PWD/src"
 
+# Set SVG source directories and theme naming based on shadow flag
+if [ "$WITH_SHADOWS" = true ]; then
+  SVG_LIGHT="svg-shadow"
+  SVG_DARK="svg-dark-shadow"
+else
+  SVG_LIGHT="svg"
+  SVG_DARK="svg-dark"
+fi
+
 THEME="MacTahoe Cursors"
-BUILD="$SRC/../dist"
-create svg
+BUILD="$PWD/dist$BUILD_SUFFIX"
+create "$SVG_LIGHT"
 
 THEME="MacTahoe-dark Cursors"
-BUILD="$SRC/../dist-dark"
-create svg-dark
+BUILD="$PWD/dist-dark$BUILD_SUFFIX"
+create "$SVG_DARK"
 
