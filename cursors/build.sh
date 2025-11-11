@@ -1,5 +1,17 @@
 #! /usr/bin/env bash
 
+WITH_SHADOWS=false
+
+for arg in "$@"; do
+  case $arg in
+    --with-shadows)
+      WITH_SHADOWS=true
+      echo "Building with shadows."
+      shift
+      ;;
+  esac
+done
+
 # check command avalibility
 has_command() {
   "$1" -v $1 > /dev/null 2>&1
@@ -39,13 +51,18 @@ function create {
 	cd "$SRC"
 	mkdir -p 24x24 32x32 48x48 64x64 72x72 96x96
 
+	# https://gitlab.com/inkscape/inkscape/-/issues/4716
+	export SELF_CALL='xxx'
+
 	cd "$SRC"/$1
-	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../24x24/${0%.svg}.png" -w 24 -h 24 $0' {} \;
-	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../32x32/${0%.svg}.png" -w 32 -h 32 $0' {} \;
-	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../48x48/${0%.svg}.png" -w 48 -w 48 $0' {} \;
-	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../64x64/${0%.svg}.png" -w 64 -w 64 $0' {} \;
-	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../72x72/${0%.svg}.png" -w 72 -w 72 $0' {} \;
-	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../96x96/${0%.svg}.png" -w 96 -w 96 $0' {} \;
+	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../24x24/${0%.svg}.png" -w 24 -h 24 $0' {} \; &
+	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../32x32/${0%.svg}.png" -w 32 -h 32 $0' {} \; &
+	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../48x48/${0%.svg}.png" -w 48 -w 48 $0' {} \; &
+	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../64x64/${0%.svg}.png" -w 64 -w 64 $0' {} \; &
+	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../72x72/${0%.svg}.png" -w 72 -w 72 $0' {} \; &
+	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../96x96/${0%.svg}.png" -w 96 -w 96 $0' {} \; &
+
+	wait
 
 	cd "$SRC"
 
@@ -97,11 +114,20 @@ function create {
 
 SRC="$PWD/src"
 
+# Set SVG source directories and theme naming based on shadow flag
+if [ "$WITH_SHADOWS" = true ]; then
+  SVG_LIGHT="svg-shadow"
+  SVG_DARK="svg-dark-shadow"
+else
+  SVG_LIGHT="svg"
+  SVG_DARK="svg-dark"
+fi
+
 THEME="MacTahoe Cursors"
-BUILD="$SRC/../dist"
-create svg
+BUILD="$PWD/dist$BUILD_SUFFIX"
+create "$SVG_LIGHT"
 
 THEME="MacTahoe-dark Cursors"
-BUILD="$SRC/../dist-dark"
-create svg-dark
+BUILD="$PWD/dist-dark$BUILD_SUFFIX"
+create "$SVG_DARK"
 
