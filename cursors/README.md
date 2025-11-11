@@ -70,7 +70,7 @@ run:
 By default, cursors are built without any shadows. You can enable them with:
 
 ```bash
-./build.sh --with-shadow
+./build.sh --with-shadows
 ```
 
 This will generate the pixmaps and appropriate aliases.

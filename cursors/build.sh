@@ -1,18 +1,13 @@
 #! /usr/bin/env bash
 
-# Parse command line arguments
 WITH_SHADOWS=false
+
 for arg in "$@"; do
   case $arg in
     --with-shadows)
       WITH_SHADOWS=true
-      echo "Building with shadows!"
+      echo "Building with shadows."
       shift
-      ;;
-    --help)
-      echo "Usage: $0 [--with-shadows]"
-      echo "  --with-shadows  Build cursors with subtle drop shadows (reverts SVGs after build)"
-      exit 0
       ;;
   esac
 done
