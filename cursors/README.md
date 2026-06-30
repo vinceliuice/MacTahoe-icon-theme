@@ -1,4 +1,4 @@
-<img src="logo-readme.png" alt="Logo" align="right" /> Qogir cursors
+<img src="logo-readme.png" alt="Logo" align="right" /> MacTahoe Cursors
 ===
 
 MacOS Tahoe like cursor theme for linux desktops.
