@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 62" width="64" height="64">
+	<defs>
+		<style>
+			.cls-1 {
+				opacity: .03;
+			}
+
+			.cls-1, .cls-2, .cls-3 {
+				isolation: isolate;
+			}
+
+			.cls-4 {
+				fill: #fff;
+			}
+
+			.cls-2 {
+				opacity: .05;
+			}
+
+			.cls-3 {
+				opacity: 0;
+			}
+
+			.cls-5 {
+				fill: url(#Dégradé_sans_nom_587);
+			}
+		</style>
+		<linearGradient id="Dégradé_sans_nom_587" data-name="Dégradé sans nom 587" x1="-188.42" y1="332.89" x2="-188.42" y2="346.11" gradientTransform="translate(742.14 1313.17) scale(3.78 -3.78)" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#15150c"/>
+			<stop offset="1" stop-color="#3b3b3a"/>
+		</linearGradient>
+
+		<!-- Glass border effect gradients -->
+		<linearGradient id="glass-gradient-1">
+			<stop offset="0" stop-color="#fff"/>
+			<stop offset="1" stop-color="#fff" stop-opacity="0"/>
+		</linearGradient>
+
+		<linearGradient xlink:href="#glass-gradient-1" id="glass-top" x1="2" x2="30" y1="2" y2="30" gradientUnits="userSpaceOnUse"/>
+		<linearGradient xlink:href="#glass-gradient-1" id="glass-bottom" x1="58" x2="40" y1="58" y2="40" gradientUnits="userSpaceOnUse"/>
+
+		<filter id="glass-blur" width="1.05" height="1.05" x="-.025" y="-.025" color-interpolation-filters="sRGB">
+			<feGaussianBlur stdDeviation=".3"/>
+		</filter>
+	</defs>
+
+	<g id="Calque_1" data-name="Calque 1" image-rendering="optimizeSpeed">
+		<g image-rendering="auto">
+			<path class="cls-3" d="M14.51,0C6.52,0,0,6.74,0,14.99v32.01c0,8.25,6.52,15,14.51,15h30.97c7.99,0,14.51-6.74,14.51-15V15c0-8.25-6.52-15-14.51-15H14.51ZM15.48,1.97h29.03c6.97,0,12.59,5.8,12.59,13v30c0,7.2-5.61,13-12.59,13H15.49c-6.97,0-12.59-5.8-12.59-13V14.97C2.9,7.77,8.51,1.97,15.49,1.97h0Z"/>
+			<path class="cls-3" d="M14.47,1C7.04,1,1,7.25,1,14.93v32.13c0,7.69,6.04,13.94,13.47,13.94h31.05c7.43,0,13.47-6.25,13.47-13.94V14.93c0-7.69-6.04-13.94-13.47-13.94H14.47ZM15.5,1.97h29c6.96,0,12.57,5.8,12.57,13v30c0,7.2-5.61,13-12.57,13H15.5c-6.96,0-12.57-5.8-12.57-13V14.97C2.93,7.77,8.53,1.97,15.5,1.97h0Z"/>
+			<path class="cls-1" d="M14.29,2C7.23,2,1.53,7.82,1.53,15v32c0,7.18,5.93,13,12.98,13h30.99c7.05,0,12.95-5.81,12.95-13V15c0-7.18-5.71-13-12.76-13h-.37c6.78.33,12.15,5.98,12.15,12.97v30c0,7.2-5.69,13-12.76,13H15.28c-7.07,0-12.76-5.8-12.76-13V14.97C2.51,7.98,7.88,2.33,14.66,2h-.37Z"/>
+			<path class="cls-1" d="M2,44.97v2.03c0,6.65,5.9,12,12.54,12h30.96c6.65,0,12.5-5.35,12.5-12v-1.99c0,7.16-5.81,12.97-12.98,12.96,0,0-.02,0-.02,0H15c-7.16.02-12.99-5.78-13-12.94,0-.02,0-.04,0-.06"/>
+			<path class="cls-2" d="M2,43v2.24c0,7.33,5.95,13.23,12.59,13.23h30.84c6.65,0,12.57-5.9,12.57-13.23v-2.19c-.02,7.92-5.81,14.29-13,14.29H15c-7.2,0-13-6.4-13-14.33"/>
+		</g>
+
+		<!-- Main background rectangle -->
+		<rect class="cls-5" x="2" y="2" width="56" height="56" rx="13" ry="13"/>
+
+		<!-- Glass border effect overlay -->
+		<g filter="url(#glass-blur)" opacity=".35">
+			<!-- Top-left to bottom-right glass highlight -->
+			<path fill="url(#glass-top)" d="M15 2c-7.18 0-13 5.82-13 13v30c0 7.18 5.82 13 13 13h30c7.18 0 13-5.82 13-13V15c0-7.18-5.82-13-13-13H15zm.5 1h29c6.627 0 12 5.373 12 12v30c0 6.627-5.373 12-12 12h-29c-6.627 0-12-5.373-12-12V15c0-6.627 5.373-12 12-12z"/>
+			<!-- Bottom-right secondary highlight -->
+			<path fill="url(#glass-bottom)" d="M15 2c-7.18 0-13 5.82-13 13v30c0 7.18 5.82 13 13 13h30c7.18 0 13-5.82 13-13V15c0-7.18-5.82-13-13-13H15zm.5 1h29c6.627 0 12 5.373 12 12v30c0 6.627-5.373 12-12 12h-29c-6.627 0-12-5.373-12-12V15c0-6.627 5.373-12 12-12z"/>
+		</g>
+
+		<!-- Tidal icon content -->
+		<g id="Calque_2" data-name="Calque 2">
+			<g>
+				<rect class="cls-4" x="13.76" y="20.76" width="8.48" height="8.48" transform="translate(22.95 -5.4) rotate(45)"/>
+				<rect class="cls-4" x="25.75" y="20.76" width="8.48" height="8.48" transform="translate(26.46 -13.89) rotate(45)"/>
+				<rect class="cls-4" x="37.75" y="20.76" width="8.48" height="8.48" transform="translate(29.98 -22.37) rotate(45)"/>
+				<rect class="cls-4" x="25.75" y="32.76" width="8.48" height="8.48" transform="translate(34.95 -10.37) rotate(45)"/>
+			</g>
+		</g>
+	</g>
+</svg>
