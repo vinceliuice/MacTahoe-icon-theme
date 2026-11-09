@@ -22,7 +22,6 @@ install_cursors() {
   local dest=${1}
   local name=${2}
   local color=${3}
-  local svgid=${4}
 
   local THEME_DIR="${dest}/${name}${color}-cursors"
 
@@ -32,16 +31,19 @@ install_cursors() {
 #  cp -r "${SRC_DIR}/cursor.theme" "${THEME_DIR}"
 #  sed -i "s/${name}/${name}${color}/g" "${THEME_DIR}/cursor.theme"
   cp -rf "$SRC_DIR"/scalable "${THEME_DIR}"/cursors_scalable
-  cp -rf "$SRC_DIR/svg${color}/${svgid}.svg" "${THEME_DIR}/cursors_scalable/${svgid}"
-  cp -rf "$SRC_DIR/svg${color}/progress"*".svg" "${THEME_DIR}/cursors_scalable/progress"
-  cp -rf "$SRC_DIR/svg${color}/wait"*".svg" "${THEME_DIR}/cursors_scalable/wait"
+
+  for svgid in `cat $INDEX`; do
+    if [[ -f "$SRC_DIR/svg${color}/${svgid}.svg" && -d "${THEME_DIR}/cursors_scalable/${svgid}" ]]; then
+      cp -rf "$SRC_DIR/svg${color}/${svgid}.svg" "${THEME_DIR}/cursors_scalable/${svgid}/"
+    fi
+  done
+  cp -rf "$SRC_DIR/svg${color}/progress"*".svg" "${THEME_DIR}/cursors_scalable/progress/"
+  cp -rf "$SRC_DIR/svg${color}/wait"*".svg" "${THEME_DIR}/cursors_scalable/wait/"
 }
 
 install_cursor_theme() {
   for color in "${COLOR_VARIANTS[@]}"; do
-    for svgid in `cat $INDEX`; do
-      install_cursors "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${svgid}"
-    done
+    install_cursors "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}"
   done
 }
 
